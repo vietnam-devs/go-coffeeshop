@@ -1,6 +1,6 @@
 module github.com/thangchung/go-coffeeshop
 
-go 1.19
+go 1.18
 
 require (
 	github.com/golang-migrate/migrate/v4 v4.15.2
