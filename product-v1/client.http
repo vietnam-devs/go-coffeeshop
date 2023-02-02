@@ -5,6 +5,10 @@ GET {{host}}/ HTTP/1.1
 content-type: application/json
 
 ###
+GET {{host}}/api1 HTTP/1.1
+content-type: application/json
+
+###
 GET {{host}}/v1/api/item-types HTTP/1.1
 content-type: application/json
 
