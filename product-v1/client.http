@@ -9,9 +9,9 @@ GET {{host}}/api1 HTTP/1.1
 content-type: application/json
 
 ###
-GET {{host}}/v1/api/item-types HTTP/1.1
+GET {{host}}/api/v1/item-types HTTP/1.1
 content-type: application/json
 
 ###
-GET {{host}}/v1/api/items-by-types/COFFEE_WITH_ROOM,MUFFIN,COFFEE_BLACK,CROISSANT_CHOCOLATE HTTP/1.1
+GET {{host}}/api/v1/items-by-types/COFFEE_WITH_ROOM,MUFFIN,COFFEE_BLACK,CROISSANT_CHOCOLATE HTTP/1.1
 content-type: application/json

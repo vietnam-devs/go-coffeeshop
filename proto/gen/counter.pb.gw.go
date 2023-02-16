@@ -95,7 +95,7 @@ func RegisterCounterServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/go.coffeeshop.proto.counterapi.CounterService/GetListOrderFulfillment", runtime.WithHTTPPathPattern("/v1/fulfillment-orders"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/go.coffeeshop.proto.counterapi.CounterService/GetListOrderFulfillment", runtime.WithHTTPPathPattern("/api/v2/fulfillment-orders"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -118,7 +118,7 @@ func RegisterCounterServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/go.coffeeshop.proto.counterapi.CounterService/PlaceOrder", runtime.WithHTTPPathPattern("/v1/api/orders"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/go.coffeeshop.proto.counterapi.CounterService/PlaceOrder", runtime.WithHTTPPathPattern("/api/v2/orders"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -180,7 +180,7 @@ func RegisterCounterServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/go.coffeeshop.proto.counterapi.CounterService/GetListOrderFulfillment", runtime.WithHTTPPathPattern("/v1/fulfillment-orders"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/go.coffeeshop.proto.counterapi.CounterService/GetListOrderFulfillment", runtime.WithHTTPPathPattern("/api/v2/fulfillment-orders"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -200,7 +200,7 @@ func RegisterCounterServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/go.coffeeshop.proto.counterapi.CounterService/PlaceOrder", runtime.WithHTTPPathPattern("/v1/api/orders"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/go.coffeeshop.proto.counterapi.CounterService/PlaceOrder", runtime.WithHTTPPathPattern("/api/v2/orders"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -220,9 +220,9 @@ func RegisterCounterServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_CounterService_GetListOrderFulfillment_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "fulfillment-orders"}, ""))
+	pattern_CounterService_GetListOrderFulfillment_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v2", "fulfillment-orders"}, ""))
 
-	pattern_CounterService_PlaceOrder_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "api", "orders"}, ""))
+	pattern_CounterService_PlaceOrder_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v2", "orders"}, ""))
 )
 
 var (

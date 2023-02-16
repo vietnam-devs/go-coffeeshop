@@ -49,12 +49,12 @@ def read_root_api1():
     return {"Hello": "From Api1"}
 
 
-@app.get("/v1/api/item-types")
+@app.get("/api/v1/item-types")
 async def get_item_types() -> list[Item]:
     return [x for x in items.values()]
 
 
-@app.get("/v1/api/items-by-types/{item_types}")
+@app.get("/api/v1/items-by-types/{item_types}")
 async def get_items_by_types(item_types: str) -> list[Item]:
     results = []
     inputs = item_types.split(",")

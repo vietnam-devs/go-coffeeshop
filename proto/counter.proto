@@ -12,7 +12,7 @@ option go_package = "github.com/thangchung/go-coffeeshop/proto/gen";
 service CounterService {
     rpc GetListOrderFulfillment(GetListOrderFulfillmentRequest) returns (GetListOrderFulfillmentResponse) {
         option (google.api.http) = {
-            get: "/v1/fulfillment-orders"
+            get: "/api/v2/fulfillment-orders"
         };
         option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
             summary: "List order fulfillment"
@@ -22,7 +22,7 @@ service CounterService {
     }
     rpc PlaceOrder(PlaceOrderRequest) returns (PlaceOrderResponse) {
         option (google.api.http) = {
-            post: "/v1/api/orders"
+            post: "/api/v2/orders"
             body: "*"
         };
         option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {

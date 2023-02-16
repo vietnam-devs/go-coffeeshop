@@ -11,7 +11,7 @@ option go_package = "github.com/thangchung/go-coffeeshop/proto/gen";
 service ProductService {
   rpc GetItemTypes(GetItemTypesRequest) returns (GetItemTypesResponse) {
     option (google.api.http) = {
-      get: "/v1/api/item-types"
+      get: "/api/v2/item-types"
     };
     option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
       summary: "List item types"
@@ -22,7 +22,7 @@ service ProductService {
 
   rpc GetItemsByType(GetItemsByTypeRequest) returns (GetItemsByTypeResponse) {
     option (google.api.http) = {
-      get: "/v1/api/items-by-types/{item_types}"
+      get: "/api/v2/items-by-types/{item_types}"
     };
     option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
       summary: "List items by type"

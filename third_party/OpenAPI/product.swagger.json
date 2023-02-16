@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/api/item-types": {
+    "/api/v2/item-types": {
       "get": {
         "summary": "List item types",
         "description": "List all item types on the server.",
@@ -40,7 +40,7 @@
         ]
       }
     },
-    "/v1/api/items-by-types/{itemTypes}": {
+    "/api/v2/items-by-types/{itemTypes}": {
       "get": {
         "summary": "List items by type",
         "description": "List items by type on the server.",

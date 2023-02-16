@@ -23,7 +23,7 @@ function initApp() {
       this.loadProducts()
     },
     async loadProducts() {
-      const response = await fetch(`${this.url}/v1/api/item-types`)
+      const response = await fetch(`${this.url}/api/v2/item-types`)
       const data = await response.json();
       this.itemTypes = data.itemTypes;
       console.log("itemTypes loaded", this.itemTypes);
@@ -31,13 +31,13 @@ function initApp() {
     async loadOrders() {
       this.orders = [];
       this.lineItems = [];
-      const response = await fetch(`${this.url}/v1/fulfillment-orders`)
+      const response = await fetch(`${this.url}/api/v2/fulfillment-orders`)
       const data = await response.json();
       this.orders = data.orders;
       console.log("orders loaded", this.orders);
     },
     async createOrder(order) {
-      const response = await fetch(`${this.url}/v1/api/orders`, {
+      const response = await fetch(`${this.url}/api/v2/orders`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

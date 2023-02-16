@@ -16,7 +16,31 @@
     "application/json"
   ],
   "paths": {
-    "/v1/api/orders": {
+    "/api/v2/fulfillment-orders": {
+      "get": {
+        "summary": "List order fulfillment",
+        "description": "List order fulfillment on the server.",
+        "operationId": "CounterService_GetListOrderFulfillment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterapiGetListOrderFulfillmentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "Orders"
+        ]
+      }
+    },
+    "/api/v2/orders": {
       "post": {
         "summary": "Place an order",
         "description": "Place an order on the server.",
@@ -45,30 +69,6 @@
             }
           }
         ],
-        "tags": [
-          "Orders"
-        ]
-      }
-    },
-    "/v1/fulfillment-orders": {
-      "get": {
-        "summary": "List order fulfillment",
-        "description": "List order fulfillment on the server.",
-        "operationId": "CounterService_GetListOrderFulfillment",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/counterapiGetListOrderFulfillmentResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
-            }
-          }
-        },
         "tags": [
           "Orders"
         ]
